@@ -5,3 +5,8 @@ html {
 canvas {
 	background-color: white;
 }
+
+p {
+	color: black;
+	z-index: 1000;
+}
