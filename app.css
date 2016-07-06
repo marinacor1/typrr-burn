@@ -6,6 +6,11 @@ canvas {
 	background-color: white;
 }
 
+canvas #background {
+	background-color: transparent;
+	z-index: 0;
+}
+
 p {
 	color: black;
 	z-index: 1000;
