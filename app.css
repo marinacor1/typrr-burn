@@ -10,3 +10,11 @@ p {
 	color: black;
 	z-index: 1000;
 }
+
+#stats {
+	position: fixed;
+	margin-left: 350px;
+	height: 300px;
+	width:100px;
+	background-color: white;
+}
