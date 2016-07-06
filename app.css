@@ -23,3 +23,13 @@ p {
 	padding: 10px;
 	text-align: center;
 }
+
+.red {
+	color: red;
+	font-size: 1.3em;
+}
+
+.green {
+	color: green;
+	font-size: 1.3em;
+}
