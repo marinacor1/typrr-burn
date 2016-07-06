@@ -18,3 +18,8 @@ p {
 	width:100px;
 	background-color: white;
 }
+
+#stats h6 {
+	padding: 10px;
+	text-align: center;
+}
