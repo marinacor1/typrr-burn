@@ -33,3 +33,13 @@ p {
 	color: green;
 	font-size: 1.3em;
 }
+
+.letter {
+	padding: 5px;
+}
+
+
+.underline {
+	text-decoration: underline;
+	font-size: 1.3em;
+}
