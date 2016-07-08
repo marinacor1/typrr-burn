@@ -1,5 +1,5 @@
 html {
-	background-color: pink;
+	background-color: #2f4f4f;
 }
 
 canvas {
@@ -7,7 +7,7 @@ canvas {
 }
 
 p {
-	color: black;
+	color: white;
 	z-index: 1000;
 }
 
@@ -31,11 +31,6 @@ p {
 
 .grey {
 	color: #d3d3d3;
-}
-
-.green {
-	color: green;
-	font-size: 1.3em;
 }
 
 .letter {
