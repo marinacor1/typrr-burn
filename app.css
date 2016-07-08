@@ -1,5 +1,18 @@
 html {
-	background-color: pink;
+	background-color: #2f4f4f;
+}
+.red {
+	color: red;
+	font-size: 1.3em;
+}
+
+.grey {
+	color: #e9e849;
+}
+
+.underline {
+	text-decoration: underline;
+	font-size: 1.3em;
 }
 
 canvas {
@@ -30,15 +43,9 @@ p {
 }
 
 .hidden {
-	display: none;
+	visibility: hidden;
 }
 
-.red {
-	color: red;
-	font-size: 1.3em;
-}
-
-.green {
-	color: green;
-	font-size: 1.3em;
+.letter {
+	padding: 5px;
 }
