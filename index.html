@@ -11,7 +11,10 @@
     <h6>Current Score:</h6>
     <h6 id="score">0</h6>
     <div id="button-div">
-      <button id="start-button" type="button" name="button">start</button>
+      <button id="start-button" type="button">start</button>
+      <!-- <form> -->
+        <input class="hidden" id="reset-button" type="button" onClick="history.go(0)" value="play again">
+      <!-- </form> -->
     </div>
   </div>
   <canvas id="birdWindow" width="300" height="300">

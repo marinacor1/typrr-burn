@@ -29,7 +29,9 @@ p {
 	text-align: center;
 }
 
-
+.hidden {
+	display: none;
+}
 
 .red {
 	color: red;
