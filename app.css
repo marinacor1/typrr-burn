@@ -29,6 +29,10 @@ p {
 	font-size: 1.3em;
 }
 
+.grey {
+	color: #d3d3d3;
+}
+
 .green {
 	color: green;
 	font-size: 1.3em;
