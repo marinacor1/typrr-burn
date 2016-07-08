@@ -1,6 +1,4 @@
-html {
-	background-color: #2f4f4f;
-}
+
 
 canvas {
 	background-color: white;
@@ -25,6 +23,14 @@ p {
 	text-align: center;
 }
 
+
+.letter {
+	padding: 5px;
+}
+
+html {
+	background-color: #2f4f4f;
+}
 .red {
 	color: red;
 	font-size: 1.3em;
@@ -33,11 +39,6 @@ p {
 .grey {
 	color: #d3d3d3;
 }
-
-.letter {
-	padding: 5px;
-}
-
 
 .underline {
 	text-decoration: underline;
