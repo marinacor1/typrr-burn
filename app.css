@@ -17,12 +17,12 @@ html {
 }
 
 canvas {
-	background-color: transparent;
+	background-color: white;
 
 }
 
 canvas #background {
-	background-color: transparent;
+	/*background-color: transparent;*/
 	z-index: 0;
 }
 
