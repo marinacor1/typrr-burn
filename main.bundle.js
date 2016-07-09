@@ -176,7 +176,7 @@
 
 	var levelText = {
 		// __for developement__
-		1: [null, "ab", "cd", "ef", "gh"],
+		1: [null, "abcdf", "cd", "ef", "gh"],
 		2: [null, "ij", "kl", "mn", "op"],
 		3: [null, "qr", "st", "uv", "wx"],
 		4: [null, "yz", "ba", "dc", "fe"],
@@ -232,7 +232,6 @@
 			this.number = number;
 			this.challenge = levelText[number];
 			this.score = accumulatedScore || 0;
-			this.counter = 0;
 			this.indexCounter = 0;
 		}
 
@@ -241,7 +240,7 @@
 			value: function render(i) {
 				var chars = this.challenge[i].split('');
 				var wrapped = chars.map(function (char, index) {
-					return "<span class='letter' id='" + i + "'>" + char + "</span>";
+					return "<span class='letter grey' id='" + i + "'>" + char + "</span>";
 				});
 				$("#challenge-text").html(wrapped.join(""));
 				return this;
@@ -249,36 +248,30 @@
 		}, {
 			key: "nextLine",
 			value: function nextLine(line) {
-				console.log("line: ", line);
-				console.log("current challenge:", this.challenge);
 				var index = this.challenge.indexOf(line) + 1;
 				if (this.challenge[index]) {
 					this.render(index);
+					$('#0').addClass('underline');
 					$('#player-input').val('');
 					return this;
 				} else if (this.number < 6) {
-					console.log("level finished: ", this.number);
 					$('#player-input').val('');
-					$('#challenge-text').html("<h1>You finished level " + this.number + ", press start to play level " + (this.number + 1) + "</h1>");
-					$('#button-div').html("<button id='new-start-button' type='button' name='button'>start</button>");
+					$('#challenge-text').html("<h2>You finished level " + this.number + ", press start to play level " + (this.number + 1) + "</h2>");
+					$('#button-div').append("<button id='new-start-button' type='button' name='button'>start</button>");
 					var nextLevel = new Level(this.number + 1, this.score + 100);
-					console.log("nextLevel: ", nextLevel.number);
 					$('#new-start-button').on('click', function () {
 						$('#player-input').focus();
-						console.log("start nextLevel: ", nextLevel.number);
 						nextLevel.render(1);
+						$('#0').addClass('underline');
 						var bird = new Bird();
 						bird.fall();
 						this.remove;
 					});
 					$('#level').text(nextLevel.number);
-					console.log("nextLevel:", nextLevel);
 					return nextLevel;
 				} else {
 					$('#challenge-text').html("<h1>You won the game!!!</h1>");
-					debugger;
 					$('#reset-button').toggleClass("hidden");
-
 					$('#player-input').val('');
 					//enter your name to save your high score! (learn to save things)
 				}
@@ -315,63 +308,47 @@
 		_createClass(KeyStroke, [{
 			key: "score",
 			value: function score() {
-				if (this.char === this.currentText[this.currentIndex]) {
-					// console.log("correct!")
-					this.scorecard.birdPoints++;
-					// console.log("birdPoints:", this.scorecard.birdPoints)
-					this.level.counter++;
-					// console.log("counter:", this.level.counter)
-					this.level.indexCounter++;
-					// console.log("indexCounter:", this.level.indexCounter)
+				if (this.char === "Backspace") {
+					this.currentIndex--;
+					this.correct = false;
+					return this;
+				} else if (this.char !== this.currentText[this.currentIndex]) {
+					this.level.score--;
+					this.currentIndex++;
+					this.bird.down();
+					this.correct = false;
+					return this;
+				} else if (this.char === this.currentText[this.currentIndex]) {
+					this.level.score++;
+					this.currentIndex++;
 					this.bird.up();
 					this.correct = true;
 					if (this.currentIndex + 1 === this.currentText.length) {
 						this.level.nextLine(this.currentText);
 					}
 					return this;
-				} else if (this.char === "Backspace") {
-					// console.log("Backspace!")
-					// console.log("birdPoints:", this.scorecard.birdPoints)
-					this.level.counter--;
-					// console.log("counter:", this.level.counter)
-					this.level.indexCounter--;
-					// console.log("indexCounter:", this.level.indexCounter)
-					// should this.correct equal true or false?
-					return this;
 				} else {
-					// console.log("wrong!")
-					this.scorecard.birdPoints--;
-					// console.log("birdPoints:", this.scorecard.birdPoints)
-					this.level.counter++;
-					// console.log("counter:", this.level.counter)
-					// console.log("indexCounter:", this.level.indexCounter)
-					this.bird.down();
-					this.correct = false;
-					return this;
-				};
+					console.log("WTF is:", this);
+				}
 			}
 		}, {
 			key: "prepareForNext",
 			value: function prepareForNext() {
 				if (this.correct) {
-					// console.log("right!, preparing...")
-					// console.log("birdPoints:", this.scorecard.birdPoints)
-					// console.log("counter:", this.level.counter)
-					// console.log("indexCounter:", this.level.indexCounter)
-					return this;
+					var $this = "#" + (this.currentIndex - 1);
+					var target = "#" + this.currentIndex;
+					debugger; //correct
 				} else if (this.char === "Backspace") {
-					// console.log("backspace!, preparing...")
-					// console.log("birdPoints:", this.scorecard.birdPoints)
-					// console.log("counter:", this.level.counter)
-					// console.log("indexCounter:", this.level.indexCounter)
-					return this;
-				} else {
-					// console.log("wrong!, preparing...")
-					// console.log("birdPoints:", this.scorecard.birdPoints)
-					// console.log("counter:", this.level.counter)
-					// console.log("indexCounter:", this.level.indexCounter)
-					return this;
-				}
+						var $this = "#" + (this.currentIndex - 1);
+						var target = "#" + this.currentIndex;
+						debugger; //backspace
+					} else if (!this.correct) {
+							var $this = "#" + (this.currentIndex - 1);
+							var target = "#" + this.currentIndex;
+							debugger; //wrong
+						} else {
+								console.log("WTF is:", this);
+							}
 			}
 		}]);
 
@@ -379,32 +356,6 @@
 	})();
 
 	module.exports = KeyStroke;
-
-	//first letter is not highlighted
-	//past letters don't change
-	//if you go back, it removes all green
-	//color you are on is green, maybe a different color?
-	// If you go back and redo it, you get more points. Need a way to store previous char and give no points.
-	//if get wrong one time, even when correct later, doesn't render green
-
-	// here is the old function---->
-	// 		this.prepareForNext = function () {
-	// 			if (this.correct) {
-	// 				var target = "#" + indexCounter
-	// 				$(".letter").removeClass("red");
-	// 				$(target).addClass("green");
-	// 			} else if (this.char === "Backspace"){
-	// 				var target = "#" + (indexCounter - 1);
-	// 			} else if (this.correct === false){
-	// 				var target = "#" + indexCounter;
-	// 				$(".letter").removeClass("green");
-	// 				$(target).addClass("red");
-	// 			}
-	// 		}
-	// 	}
-	// }
-
-	// current text, current index, counter, text--all could be properties of level.
 
 /***/ }
 /******/ ]);
