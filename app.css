@@ -1,9 +1,28 @@
 html {
-	background-color: pink;
+	background-color: #2f4f4f;
+}
+
+.red {
+	color: red;
+	font-size: 1.3em;
+}
+
+.grey {
+	color: #e9e849;
+}
+
+.underline {
+	text-decoration: underline;
+	font-size: 1.3em;
 }
 
 canvas {
 	background-color: white;
+}
+
+canvas #background {
+	background-color: transparent;
+	z-index: 0;
 }
 
 p {
@@ -24,12 +43,10 @@ p {
 	text-align: center;
 }
 
-.red {
-	color: red;
-	font-size: 1.3em;
+.hidden {
+	visibility: hidden;
 }
 
-.green {
-	color: green;
-	font-size: 1.3em;
+.letter {
+	padding: 5px;
 }
