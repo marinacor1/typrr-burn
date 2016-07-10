@@ -29,5 +29,9 @@ describe ("Bird", function(){
     it('will go up from default', function(){
       assert.equal(initial_bird.up.y, 135);
     })
+
+    it('will go down from default', function(){
+      assert.equal(initial_bird.down.y, 165)
+    })
   })
 }
