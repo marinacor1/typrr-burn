@@ -1,13 +1,33 @@
 const assert = require('chai').assert;
-const Level = require('../lib/level')
+const Bird = require('../lib/bird')
 
-describe ("Level", function(){
+describe ("Bird", function(){
   context('with default attributes', function(){
-    var level = new Level(1, 1);
-    var level6 = new Level(6, 60);
+    var bird = new Bird();
 
-    it('should assign a number', function(){
-      assert.equal(level.number, 1);
+    it('should assign an x value', function(){
+      assert.equal(bird.x, 10);
     })
+
+    it('should assign a y value', function(){
+      assert.equal(bird.y, 150);
+    })
+
+    it('should assign a width', function(){
+      assert.equal(bird.width, 10);
+    })
+
+    it('should assign a height', function(){
+      assert.equal(bird.height, 10);
+    })
+
   }
+
+  context('with game functionality', function(){
+    var initial_bird = new Bird();
+
+    it('will go up from default', function(){
+      assert.equal(initial_bird.up.y, 135);
+    })
+  })
 }
