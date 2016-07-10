@@ -52,12 +52,5 @@ describe ("Level", function(){
       assert.equal(level.score, 101 )
     })
 
-    
-
-
-
-
-
-
   })
 })
