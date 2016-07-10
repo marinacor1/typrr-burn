@@ -21,9 +21,18 @@ canvas {
 
 }
 
-canvas #background {
-	/*background-color: transparent;*/
-	z-index: 0;
+#canvas-container {
+	width: 600;
+	height: 400;
+	margin: 0 auto;
+	position: relative;
+}
+
+#birdWindow,
+#background {
+	top: 0;
+	left: 0;
+	position: absolute;
 }
 
 p {
