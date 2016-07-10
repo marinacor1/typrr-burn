@@ -41,16 +41,15 @@ p {
 }
 
 #stats {
-	position: fixed;
-	margin-left: 350px;
-	height: 300px;
-	width:100px;
-	background-color: white;
-}
-
-#stats h6 {
-	padding: 10px;
+	margin-top: 10px;
+	margin-right: -15px;
+	padding: 3px;
+	float: right;
+	position: relative;
+	top: 0;
+	background-color: rgba(212, 133, 233, 0.45);
 	text-align: center;
+	border-radius: 5px;
 }
 
 .hidden {

@@ -9,20 +9,18 @@
 </head>
 <body>
   <div class="container">
-    <div id="stats">
-      <h6>Current Score:</h6>
-      <h6 id="score">0</h6>
-      <h6>Level:</h6>
-      <h6 id="level">1</h6>
-      <h6 id="stats-message"></h6>
-    </div>
     <div id="canvas-container">
       <canvas id="background" width="600" height="400">
       </canvas>
       <canvas id="birdWindow" width="600" height="400">
       </canvas>
+      <div id="stats">
+        <h6>Score: <span id="score">0</span></h6>
+        <h6>Level: <span id="level">1</span></h6>
+        <h6 id="stats-message"></h6>
+      </div>
     </div>
-    <br>
+    <!-- <br> -->
     <div class="hidden">
       <img id="cloud-pic" src = "/lib/cloud-pic.png">
     </div>
