@@ -51,6 +51,5 @@ describe ("Level", function(){
       level.bonusPoints();
       assert.equal(level.score, 101 )
     })
-
   })
 })
