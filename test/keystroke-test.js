@@ -1,17 +1,17 @@
 const assert = require('chai').assert;
 const KeyStroke = require('../lib/keystroke');
 const Level = require('../lib/level')
-// const Bird = require('../lib/bird')
-// const sinon = require('sinon').stub;
+const Bird = require('../lib/bird')
+const sinon = require('sinon')
 // var sinon = require("imports?define=>false!sinon");
 // const stub = sinon.stub();
 
 describe ("Keystroke", function() {
-	context('with a correct keystroke', function(){
+	context('with a correct keystroke',function(){
 		var level = new Level(1);
 		var text = level.challenge[0]
 		var char = level.challenge[0][0]
-		var bird = {};
+		var bird = new Bird();
 		var correctKeystroke = new KeyStroke(char, text, 0, level, bird);
 
 		it('should assign a char', function(){

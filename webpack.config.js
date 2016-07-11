@@ -19,5 +19,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.json', '.scss', '.css']
-  }
+  },
+  plugins: [new webpack.ContextReplacementPlugin(/protobufjs/, /^$/)]
 };
