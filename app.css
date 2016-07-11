@@ -55,6 +55,24 @@ canvas {
 	z-index: 3;
 }
 
+#bonus-message {
+	top: 0;
+	left: 300;
+	margin-top: 250px;
+	padding: 3px;
+	position: absolute;
+	text-align: center;
+	border-radius: 5px;
+	z-index: 3;
+
+}
+
+.fixed {
+	position:fixed;
+	width: 600px;
+
+}
+
 #text-div {
 	z-index: 4;
 }
@@ -64,16 +82,11 @@ input:focus {
 	border-bottom: 0px solid transparent !important;
 	width: 0px !important;
 	color: transparent !important;
-
 }
-
-
 
 .typing-div {
 	position: absolute;
-	margin: 0 auto;
-	margin-top: 250px;
-	left: 5%;
+	margin-top: 300px;
 	text-align: center;
 }
 
