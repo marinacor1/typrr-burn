@@ -94,10 +94,6 @@ canvas {
 	margin-left: 50px;
 }
 
-.invisible {
-	display: none;
-}
-
 input,
 input:focus {
 	border-bottom: 0px solid transparent !important;
