@@ -2,18 +2,23 @@ html {
 	background-color: #2f4f4f;
 }
 
-.red {
+body {
+	font-family: 'PT Mono';
+	color: #2E3D37
+}
+
+.my-red {
 	color: red;
-	font-size: 1.3em;
 }
 
-.grey {
-	color: #e9e849;
+.my-grey {
+	color: #8f9d98;
 }
 
-.underline {
+.my-underline {
 	text-decoration: underline;
-	font-size: 1.3em;
+	border: 1px solid #edc32b;
+	background-color: #ffffff;
 }
 
 canvas {
@@ -77,6 +82,11 @@ canvas {
 	z-index: 4;
 }
 
+.challenge-text {
+	font-size: 1.5em;
+}
+
+
 input,
 input:focus {
 	border-bottom: 0px solid transparent !important;
@@ -95,5 +105,6 @@ input:focus {
 }
 
 .letter {
-	padding: 5px;
+	font-size: 1em;
+	/*padding: 5px;*/
 }
