@@ -35,34 +35,44 @@ canvas {
 }
 
 #background {
-	z-index: 0;
-}
-
-#birdWindow {
 	z-index: 1;
 }
 
-#stats {
-	margin-top: 10px;
-	margin-right: 20px;
-	padding: 3px;
-	position: relative;
-	float: right;
-	top: 0;
-	background-color: rgba(212, 133, 233, 0.45);
-	text-align: center;
-	border-radius: 5px;
+#birdWindow {
 	z-index: 2;
 }
 
-#typing-div {
+#stats {
+	top: 0;
+	left: 300;
+	margin-top: 10px;
+	margin-left: 10px;
+	padding: 3px;
+	position: absolute;
+	background-color: rgba(212, 133, 233, 0.45);
+	text-align: center;
+	border-radius: 5px;
 	z-index: 3;
+}
+
+#text-div {
+	z-index: 4;
+}
+
+input,
+input:focus {
+	border-bottom: 0px solid transparent !important;
+	width: 0px !important;
+	color: transparent !important;
+
+}
+
+
+
+.typing-div {
 	position: absolute;
 	margin: 0 auto;
 	margin-top: 250px;
-	width: 90%;
-	/*height: 0%;*/
-	/*bottom: 25%;*/
 	left: 5%;
 	text-align: center;
 }
