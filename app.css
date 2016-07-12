@@ -94,6 +94,14 @@ canvas {
 	box-shadow: 5px 5px 5px orange;
 }
 
+.high-score-box {
+	color: black;
+	text-align: center;
+	background-color: #b6e6d8;
+	border: solid;
+	box-shadow: 5px 5px 5px pink;
+}
+
 input,
 input:focus {
 	border-bottom: 0px solid transparent !important;
