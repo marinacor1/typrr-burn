@@ -75,7 +75,7 @@ canvas {
 .fixed {
 	position:fixed;
 	width: 600px;
-
+	height: 400px;
 }
 
 #text-div {
