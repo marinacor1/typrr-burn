@@ -102,6 +102,12 @@ canvas {
 	box-shadow: 5px 5px 5px pink;
 }
 
+.you-have-high-score{
+	color: white;
+	text-align: center;
+	font-size: 150%;
+}
+
 input,
 input:focus {
 	border-bottom: 0px solid transparent !important;
