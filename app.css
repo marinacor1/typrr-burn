@@ -87,15 +87,11 @@ canvas {
 }
 
 .instructions{
-	color: brown;
+	color: black;
 	text-align: center;
-	background-color: #FAEBD7;
+	background-color: #b6e6d8;
 	border: solid;
-	margin-left: 50px;
-}
-
-.invisible {
-	display: none;
+	box-shadow: 5px 5px 5px orange;
 }
 
 input,
