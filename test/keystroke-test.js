@@ -2,9 +2,6 @@ const assert = require('chai').assert;
 const KeyStroke = require('../lib/keystroke');
 const Level = require('../lib/level')
 // const Bird = require('../lib/bird')
-// const sinon = require('sinon').stub;
-// var sinon = require("imports?define=>false!sinon");
-// const stub = sinon.stub();
 
 describe ("Keystroke", function() {
 	context('with a correct keystroke', function(){
