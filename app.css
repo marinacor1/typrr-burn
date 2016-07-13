@@ -1,10 +1,25 @@
 html {
-	background-color: #2f4f4f;
+	background-color: #2E3D37;
 }
 
 body {
 	font-family: 'PT Mono';
 	color: #2E3D37
+}
+
+.header {
+	background-color: #98824D;
+	margin-bottom: 20px;
+	padding-top: 25px;
+}
+
+.logo {
+	color: #d485e9
+}
+
+.burn {
+	color: #E5A200;
+	text-shadow: -3px 0px 6px #d2691c
 }
 
 .my-red {
@@ -28,6 +43,8 @@ body {
 
 canvas {
 	background-color: transparent;
+	box-shadow: -3px 3px 12px #1e2824;
+	border-radius: 5px;
 }
 
 #canvas-container {
@@ -91,7 +108,7 @@ canvas {
 	font-size: 1.5em;
 }
 
-.instructions{
+.instructions {
 	color: black;
 	text-align: center;
 	background-color: #b6e6d8;
