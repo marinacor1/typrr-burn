@@ -4,8 +4,16 @@ html {
 
 body {
 	font-family: 'PT Mono';
-	color: #2E3D37
+	color: #2E3D37;
+	/*display: flex;*/
+	/*min-height: 100vh;*/
+	/*flex-direction: column;*/
 }
+
+/*
+main {
+ flex: 1 0 auto;
+}*/
 
 .header {
 	background-color: #98824D;
@@ -95,7 +103,7 @@ canvas {
 }
 
 .fixed {
-	position:fixed;
+	/*position:fixed;*/
 	width: 600px;
 	height: 400px;
 }
