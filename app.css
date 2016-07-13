@@ -5,15 +5,20 @@ html {
 body {
 	font-family: 'PT Mono';
 	color: #2E3D37;
-	/*display: flex;*/
-	/*min-height: 100vh;*/
-	/*flex-direction: column;*/
+	height: 100px;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
-/*
+.body-div {
+	height: 600px;
+}
+
+
 main {
  flex: 1 0 auto;
-}*/
+}
 
 .header {
 	background-color: #98824D;
@@ -105,7 +110,7 @@ canvas {
 .fixed {
 	/*position:fixed;*/
 	width: 600px;
-	height: 400px;
+	height: 80px;
 }
 
 #text-div {
@@ -117,23 +122,21 @@ canvas {
 }
 
 .instructions {
-	color: black;
-	text-align: center;
-	background-color: #b6e6d8;
-	border: solid;
-	box-shadow: 5px 5px 5px orange;
+	display: block;
+	height: 400px;
+	min-width: 150px;
+	box-shadow: -3px 3px 12px #1e2824;
+	border-radius: 5px;
+	background-color: #ffebba;
+	border: 2px dotted #BF712B;
+	padding: 10px;
 }
 
 .high-score-box {
-	color: black;
-	text-align: center;
-	background-color: #b6e6d8;
-	border: solid;
-	box-shadow: 5px 5px 5px pink;
+	margin-top: 3%;
 }
 
 .you-have-high-score{
-	color: white;
 	text-align: center;
 	font-size: 150%;
 }
@@ -146,6 +149,7 @@ canvas {
 
 .hidden {
 	visibility: hidden;
+	height: 350px;
 }
 
 .letter {

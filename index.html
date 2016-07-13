@@ -9,13 +9,31 @@
   <link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <div class="body-div">
+
   <div class="header">
     <div class="container">
       <h1 class="center-align">__<em class="logo">Typrr<span class="burn">Burn</span></em>......></h1>
     </div>
   </div>
   <div class="row container">
-    <div class="container">
+    <div class="instructions col s3">
+      <div class="">
+        <div class="high-score-box">
+          <p></p>
+        </div>
+        <p>How to Play:</p>
+        <p>Keep the bird from falling by correctly typing the text.</p>
+      </div>
+      <div class="">
+      </div>
+      <div class="">
+        <div class="you-have-high-score">
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <div class="container col s8">
       <div id="canvas-container">
         <canvas id="background" width="600" height="400">
         </canvas>
@@ -36,24 +54,6 @@
       </div>
     </div>
 
-    <!-- <div class="instructions col s3 offset-s8">
-      <div class="row">
-        <p>Directions:</p>
-        <p>Keep the bird afloat, by typing the correct answer.</p>
-        <p> Earn extra points for typing fast!</p>
-      </div>
-      <div class="row">
-        <div class="high-score-box col s3 offset-s8">
-          <p></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="you-have-high-score col s3 offset-s8">
-          <p></p>
-        </div>
-      </div>
-    </div> -->
-
   </div>
 
 
@@ -68,11 +68,15 @@
     </div>
   </div>
 
+
+
+
+</div>
   <footer class="page-footer">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
-              <h5 class="white-text">Footer Content</h5>
+              <h5 class="white-text high-score-box"></h5>
               <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
             </div>
             <div class="col l4 offset-l2 s12">
