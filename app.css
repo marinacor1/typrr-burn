@@ -9,6 +9,10 @@ body {
 
 .my-red {
 	color: red;
+	text-decoration: underline;
+	border: 1px solid #ed2b2b;
+	background-color: #ffc8c8;
+	border-radius: 3px;
 }
 
 .my-grey {
@@ -19,6 +23,7 @@ body {
 	text-decoration: underline;
 	border: 1px solid #edc32b;
 	background-color: #ffffff;
+	border-radius: 3px;
 }
 
 canvas {
@@ -108,13 +113,6 @@ canvas {
 	font-size: 150%;
 }
 
-input,
-input:focus {
-	border-bottom: 0px solid transparent !important;
-	width: 0px !important;
-	color: transparent !important;
-}
-
 .typing-div {
 	position: absolute;
 	margin-top: 300px;
@@ -127,5 +125,4 @@ input:focus {
 
 .letter {
 	font-size: 1em;
-	/*padding: 5px;*/
 }

@@ -1,5 +1,6 @@
 const assert = require('chai').assert;
 const Level = require('../lib/level')
+const texts = require('../lib/texts')
 
 describe ("Level", function(){
   context('with default attributes', function(){
@@ -11,7 +12,7 @@ describe ("Level", function(){
     })
 
     it('should assign a challenge', function(){
-      assert.equal(level.challenge[0],  "ene ite nee inet one ene ite etee tent at");
+      assert.equal(level.challenge[0], texts.levelText[1][0]);
     })
 
     it('should assign a score', function(){
