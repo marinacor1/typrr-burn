@@ -11,7 +11,7 @@ describe ("Level", function(){
     })
 
     it('should assign a challenge', function(){
-      assert.equal(level.challenge[0],  "abcdf");
+      assert.equal(level.challenge[0],  "ene ite nee inet one ene ite etee tent at");
     })
 
     it('should assign a score', function(){
@@ -26,14 +26,14 @@ describe ("Level", function(){
       assert.equal(level.score, 1)
     })
 
-    xit('should prepare a line', function(){
+    it('should prepare a line', function(){
       var prepared = level.preparedLine(0)
-     var expected = ''
+      var expected = level.preparedLine(0)
       assert.equal(prepared,expected)
     })
 
     it('finds the index of the next line', function(){
-      assert.equal(level.indexOfNextLine("abcdf"), 1)
+      assert.equal(level.indexOfNextLine("abcdf"), 0)
     })
 
     it('knows if there is another line', function(){
