@@ -38,5 +38,6 @@
   },
   "dependencies": {
     "imports-loader": "^0.6.5",
+    "sinon": "^1.17.4"
   }
 }
