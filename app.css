@@ -113,13 +113,6 @@ canvas {
 	font-size: 150%;
 }
 
-input,
-input:focus {
-	border-bottom: 0px solid transparent !important;
-	width: 0px !important;
-	color: transparent !important;
-}
-
 .typing-div {
 	position: absolute;
 	margin-top: 300px;
@@ -132,5 +125,4 @@ input:focus {
 
 .letter {
 	font-size: 1em;
-	/*padding: 5px;*/
 }
