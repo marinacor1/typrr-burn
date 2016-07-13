@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>Typrr Burn</title>
-  <link href="app.css" type="text/css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/ff06d9f833.js"></script>
+  <link href="app.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
   <link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
 </head>
@@ -22,8 +23,10 @@
         <div class="high-score-box">
           <p></p>
         </div>
-        <p>How to Play:</p>
-        <p>Keep the bird from falling by correctly typing the text.</p>
+        <div class="how-to-text">
+          <p>How to Play:</p>
+          <p>Keep the bird from falling by correctly typing the text.</p>
+        </div>
       </div>
       <div class="">
       </div>
@@ -59,12 +62,12 @@
 
     <!-- <br> -->
     <div class="hidden">
-      <img id="cloud-pic" src = "/lib/cloud-pic.png">
-      <img id="bird-1-pic" src="/lib/bird-1.png">
-      <img id="bird-2-pic" src="/lib/bird-1.png">
-      <img id="bird-3-pic" src="/lib/bird-1.png">
-      <img id="bird-4-pic" src="/lib/bird-1.png">
-      <img id="bird-5-pic" src="/lib/bird-1.png">
+      <img id="cloud-pic" src ="https://s3-us-west-1.amazonaws.com/ideabox/cloud-pic.png">
+      <img id="bird-1-pic" src="https://s3-us-west-1.amazonaws.com/ideabox/bird-1.png">
+      <img id="bird-2-pic" src="https://s3-us-west-1.amazonaws.com/ideabox/bird-2.png">
+      <img id="bird-3-pic" src="https://s3-us-west-1.amazonaws.com/ideabox/bird-3.png">
+      <img id="bird-4-pic" src="https://s3-us-west-1.amazonaws.com/ideabox/bird-4.png">
+      <img id="bird-5-pic" src="https://s3-us-west-1.amazonaws.com/ideabox/bird-5.png">
     </div>
   </div>
 
@@ -72,31 +75,19 @@
 
 
 </div>
-  <footer class="page-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text high-score-box"></h5>
-              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Links</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-              </ul>
-            </div>
+<footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="author1">
+            <h5><center><a href="https://www.github.com/jeneve"><strong> Jeneve Parrish</strong></a>
+            <i class="fa fa-github" aria-hidden="true"></i><a href="https://www.github.com/marinacor1"><strong> Marina Corona</strong></a></center></h5>
+            <br>
+            <h5><a href="https://www.turing.io">Turing</h5>
+          </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
-          © 2014 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-          </div>
-        </div>
-      </footer>
+      </div>
+    </footer>
   <script src="main.bundle.js"></script>
 
 </body>

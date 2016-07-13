@@ -6,19 +6,19 @@ body {
 	font-family: 'PT Mono';
 	color: #2E3D37;
 	height: 100px;
-	display: flex;
-	min-height: 100vh;
-	flex-direction: column;
+	/*display: flex;*/
+	/*min-height: 100vh;*/
+	/*flex-direction: column;*/
 }
 
 .body-div {
-	height: 600px;
+	height: 550px;
 }
 
 
-main {
+/*main {
  flex: 1 0 auto;
-}
+}*/
 
 .header {
 	background-color: #98824D;
@@ -127,7 +127,7 @@ canvas {
 	min-width: 150px;
 	box-shadow: -3px 3px 12px #1e2824;
 	border-radius: 5px;
-	background-color: #ffebba;
+	background-color: #E5A200;
 	border: 2px dotted #BF712B;
 	padding: 10px;
 }
@@ -154,4 +154,29 @@ canvas {
 
 .letter {
 	font-size: 1em;
+}
+
+a:hover {
+    color: orange;
+}
+a:visited {
+    color: black;
+}
+a:link {
+    color:black;
+}
+
+a:active{
+    color:black;
+}
+
+.page-footer {
+    /*height: 40px;*/
+    display: flex;
+    min-height: 20vh;
+    flex-direction: column;
+}
+
+.author1 {
+    text-align: center;
 }
