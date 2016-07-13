@@ -3,62 +3,92 @@
 <head>
   <meta charset="utf-8">
   <title>Typrr Burn</title>
-  <link href="app.css" type="text/css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/ff06d9f833.js"></script>
+  <link href="app.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
   <link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div class="container col s8 offset-s2">
-    <div id="canvas-container">
-      <canvas id="background" width="600" height="400">
-      </canvas>
-      <canvas id="birdWindow" width="600" height="400">
-      </canvas>
-      <div id="stats" width="600" height="400">
-        <h6>Score: <span id="score">0</span></h6>
-        <h6>Level: <span id="level">1</span></h6>
+  <div class="body-div">
+
+  <div class="header">
+    <div class="container">
+      <h1 class="center-align">__<em class="logo">Typrr<span class="burn">Burn</span></em>......></h1>
+    </div>
+  </div>
+  <div class="row container">
+    <div class="instructions col s3">
+      <div class="">
+        <div class="high-score-box">
+          <p></p>
+        </div>
+        <div class="how-to-text">
+          <p>How to Play:</p>
+          <p>Keep the bird from falling by correctly typing the text.</p>
+        </div>
       </div>
-      <div id="bonus-message" class="fixed">
-        <h6 id="stats-message"></h6>
+      <div class="">
       </div>
-      <div class="typing-div" id="text-div" width="600" height="400">
-        <div class="fixed">
-          <h4 id="challenge-text" class="challenge-text">press any key to start the game</h4>
+      <div class="">
+        <div class="you-have-high-score">
+          <p></p>
         </div>
       </div>
     </div>
-      <div class = "row">
-        <div class="instructions col s3 offset-s8">
-            <p>Directions:</p>
-            <p>Keep the bird afloat, by typing the correct answer.</p>
-            <p> Earn extra points for typing fast!</p>
+    <div class="container col s8">
+      <div id="canvas-container">
+        <canvas id="background" width="600" height="400">
+        </canvas>
+        <canvas id="birdWindow" width="600" height="400">
+        </canvas>
+        <div id="stats" width="600" height="400">
+          <h6>Score: <span id="score">0</span></h6>
+          <h6>Level: <span id="level">1</span></h6>
+        </div>
+        <div id="bonus-message" class="fixed">
+          <h6 id="stats-message"></h6>
+        </div>
+        <div class="typing-div" id="text-div" width="600" height="400">
+          <div class="fixed">
+            <h4 id="challenge-text" class="challenge-text center-align">press any key to start the game</h4>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="high-score-box col s3 offset-s8">
-            <p></p>
-        </div>
-      </div>
+    </div>
 
-      <div class="row">
-        <div class="you-have-high-score col s3 offset-s8">
-            <p></p>
-        </div>
-      </div>
+  </div>
+
 
     <!-- <br> -->
     <div class="hidden">
-      <img id="cloud-pic" src = "/lib/cloud-pic.png">
-      <img id="bird-1-pic" src="/lib/bird-1.png">
-      <img id="bird-2-pic" src="/lib/bird-1.png">
-      <img id="bird-3-pic" src="/lib/bird-1.png">
-      <img id="bird-4-pic" src="/lib/bird-1.png">
-      <img id="bird-5-pic" src="/lib/bird-1.png">
+      <img id="cloud-pic" src ="https://s3-us-west-1.amazonaws.com/ideabox/cloud-pic.png">
+      <img id="bird-1-pic" src="https://s3-us-west-1.amazonaws.com/ideabox/bird-1.png">
+      <img id="bird-2-pic" src="https://s3-us-west-1.amazonaws.com/ideabox/bird-2.png">
+      <img id="bird-3-pic" src="https://s3-us-west-1.amazonaws.com/ideabox/bird-3.png">
+      <img id="bird-4-pic" src="https://s3-us-west-1.amazonaws.com/ideabox/bird-4.png">
+      <img id="bird-5-pic" src="https://s3-us-west-1.amazonaws.com/ideabox/bird-5.png">
     </div>
-
-
-    <script src="main.bundle.js"></script>
   </div>
+
+
+
+
+</div>
+<footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="author1">
+            <h5><center><a href="https://www.github.com/jeneve"><strong> Jeneve Parrish</strong></a>
+            <i class="fa fa-github" aria-hidden="true"></i><a href="https://www.github.com/marinacor1"><strong> Marina Corona</strong></a></center></h5>
+            <br>
+            <h5><a href="https://www.turing.io">Turing</h5>
+          </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <script src="main.bundle.js"></script>
+
 </body>
 </html>
