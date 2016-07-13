@@ -10,6 +10,10 @@ body {
 	/*flex-direction: column;*/
 }
 
+.typr-burn-body{
+	height: 600px;
+}
+
 /*
 main {
  flex: 1 0 auto;
@@ -122,6 +126,10 @@ canvas {
 	background-color: #b6e6d8;
 	border: solid;
 	box-shadow: 5px 5px 5px orange;
+	width: 300px;
+	float: right;
+	margin-right: 50px;
+	height: 250px;
 }
 
 .high-score-box {
@@ -130,6 +138,11 @@ canvas {
 	background-color: #b6e6d8;
 	border: solid;
 	box-shadow: 5px 5px 5px pink;
+	width: 300px;
+	margin-right: 50px;
+	float: right;
+	height: 30px;
+
 }
 
 .you-have-high-score{
@@ -146,8 +159,20 @@ canvas {
 
 .hidden {
 	visibility: hidden;
+	height: 100px;
 }
 
 .letter {
 	font-size: 1em;
+}
+
+.page-footer {
+	/*height: 40px;*/
+	display: flex;
+	min-height: 20vh;
+	flex-direction: column;
+}
+
+.author1 {
+	text-align: center;
 }
