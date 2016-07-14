@@ -127,13 +127,29 @@ canvas {
 	padding: 10px;
 }
 
-.high-score-box {
-	margin-top: 3%;
+.how-to-text {
+
 }
 
-.you-have-high-score{
+.bold {
+	font-weight: bolder;
+	text-decoration: underline;
+}
+
+.high-score-box {
+	margin-top: 3%;
+	border: 2px dotted #BF712B;
+}
+
+.you-have-high-score,
+.high-score-box {
+	font-size: 1.3em !important;
 	text-align: center;
+	font-weight: bolder;
+	line-height: inherit;
+	padding: 10px;
 	font-size: 150%;
+	border-radius: 5px;
 }
 
 .typing-div {
