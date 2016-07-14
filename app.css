@@ -127,6 +127,12 @@ canvas {
 	padding: 10px;
 }
 
+#bird-logo {
+ align-items: center;
+ padding: 5px;
+ margin-top: 10px;
+}
+
 .how-to-text {
 
 }
