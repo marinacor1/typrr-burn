@@ -6,19 +6,11 @@ body {
 	font-family: 'PT Mono';
 	color: #2E3D37;
 	height: 100px;
-	/*display: flex;*/
-	/*min-height: 100vh;*/
-	/*flex-direction: column;*/
 }
 
 .body-div {
 	height: 550px;
 }
-
-
-/*main {
- flex: 1 0 auto;
-}*/
 
 .header {
 	background-color: #98824D;
@@ -33,6 +25,10 @@ body {
 .burn {
 	color: #E5A200;
 	text-shadow: -3px 0px 6px #d2691c
+}
+
+.title {
+	color: #27182b;
 }
 
 .my-red {
@@ -108,7 +104,6 @@ canvas {
 }
 
 .fixed {
-	/*position:fixed;*/
 	width: 600px;
 	height: 80px;
 }
@@ -132,13 +127,35 @@ canvas {
 	padding: 10px;
 }
 
-.high-score-box {
-	margin-top: 3%;
+#bird-logo {
+ align-items: center;
+ padding: 5px;
+ margin-top: 30px;
 }
 
-.you-have-high-score{
+.how-to-text {
+
+}
+
+.bold {
+	font-weight: bolder;
+	text-decoration: underline;
+}
+
+.high-score-box {
+	/*margin-top: 3%;*/
+	border: 2px dotted #BF712B;
+}
+
+.you-have-high-score,
+.high-score-box {
+	font-size: 1.3em !important;
 	text-align: center;
+	font-weight: bolder;
+	line-height: inherit;
+	padding: 10px;
 	font-size: 150%;
+	border-radius: 5px;
 }
 
 .typing-div {
@@ -157,21 +174,20 @@ canvas {
 }
 
 a:hover {
-    color: orange;
+    color: orange !important;
 }
 a:visited {
-    color: black;
+    color: #2E3D37;
 }
 a:link {
-    color:black;
+    color: #2E3D37;
 }
 
 a:active{
-    color:black;
+    color: #2E3D37;
 }
 
 .page-footer {
-    /*height: 40px;*/
     display: flex;
     min-height: 20vh;
     flex-direction: column;
@@ -180,4 +196,8 @@ a:active{
 
 .author1 {
     text-align: center;
+}
+
+.icon {
+	color: #27182b;
 }
