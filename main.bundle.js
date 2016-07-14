@@ -51,15 +51,17 @@
 
 	var Bird = __webpack_require__(1);
 	var Level = __webpack_require__(2);
-	var KeyStroke = __webpack_require__(4);
-	var Game = __webpack_require__(5);
+	var KeyStroke = __webpack_require__(5);
+	var Game = __webpack_require__(6);
+	var Painter = __webpack_require__(4);
+	var painter = new Painter();
 
 	var bird = new Bird(1);
 	var highScore = localStorage['high score'] || 0;
 	var levelOne = new Level(1, highScore, bird);
 
 	document.addEventListener('keyup', function startLevelOne(event) {
-		levelOne.removeInstructions();
+		painter.removeInstructions();
 		levelOne.render(0);
 		bird.fall();
 		this.removeEventListener('keyup', startLevelOne);
@@ -80,9 +82,7 @@
 	});
 
 	window.addEventListener('keydown', function () {
-		if (event.which == 8) {
-			event.preventDefault();
-		};
+		event.preventDefault();
 	});
 
 /***/ },
@@ -176,15 +176,15 @@
 				if (level === 1) {
 					return 0.01;
 				} else if (level === 2) {
-					return 0.2;
+					return 0.45;
 				} else if (level === 3) {
-					return 0.3;
-				} else if (level === 4) {
-					return 0.4;
-				} else if (level === 5) {
-					return 0.5;
-				} else {
 					return 0.6;
+				} else if (level === 4) {
+					return 0.7;
+				} else if (level === 5) {
+					return 0.8;
+				} else {
+					return 0.9;
 				}
 			}
 		}, {
@@ -201,8 +201,16 @@
 			}
 		}, {
 			key: 'down',
-			value: function down() {
-				this.y += 10;
+			value: function down(level) {
+				if (level === 1) {
+					this.y += 10;
+				} else if (level === 2 || level === 3) {
+					this.y += 20;
+				} else if (level === 4 || level === 5) {
+					this.y += 30;
+				} else {
+					this.y += 40;
+				}
 			}
 		}]);
 
@@ -222,6 +230,8 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 	var texts = __webpack_require__(3);
+	var Painter = __webpack_require__(4);
+	var painter = new Painter();
 
 	var Level = (function () {
 		function Level(number, accumulatedScore, bird) {
@@ -237,28 +247,20 @@
 		_createClass(Level, [{
 			key: 'endGame',
 			value: function endGame() {
-				// remove the keyup event listener-need to name it and move it to do this.
 				if (this.number === 6) {
 					$('#challenge-text').text("You won the game!!! Press enter to play again");
 				} else {
 					$('#challenge-text').text("Your bird fell. Press enter to try again");
 				}
 				if (this.score > localStorage['high score']) {
-					$('.you-have-high-score').text("Congratulations! You now have the highest score!");
+					$('.you-have-high-score').text("Congratulations! You achieved a new high score!");
 					localStorage['high score'] = this.score;
 				}
-				$(".high-score-box").text("Highest Score: " + localStorage['high score']);
+				$(".high-score-box").text("Your Best Score: " + localStorage['high score']);
 				document.addEventListener('keyup', function (event) {
 					if (event.keyCode === 13) {
 						location.reload();
 					};
-				});
-			}
-		}, {
-			key: 'removeInstructions',
-			value: function removeInstructions() {
-				$('.instructions').fadeOut(300, function () {
-					$(this).text("");
 				});
 			}
 		}, {
@@ -399,6 +401,37 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+	var Painter = (function () {
+	  function Painter() {
+	    _classCallCheck(this, Painter);
+	  }
+
+	  _createClass(Painter, [{
+	    key: "removeInstructions",
+	    value: function removeInstructions() {
+	      $('.how-to-text').fadeOut(2000, function () {
+	        // $(this).text("");
+	        $(this).html("<div id='bird-logo'><img src='https://s3-us-west-1.ama" + "zonaws.com/ideabox/bird-logo.png' alt='Bird' " + "height='150' width='150'><div>");
+	      });
+	      $('.how-to-text').fadeIn(2000);
+	    }
+	  }]);
+
+	  return Painter;
+	})();
+
+	module.exports = Painter;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 	var currentIndex;
 
 	var KeyStroke = (function () {
@@ -443,7 +476,7 @@
 				if (currentIndex === 0 && !this.char.match(/[a-z]/i)) {
 					return this;
 				} else if (this.char !== this.currentText[currentIndex]) {
-					this.level.bird.down();
+					this.level.bird.down(this.level);
 					this.scoreIncorrect();
 					return this;
 				} else if (this.char === this.currentText[currentIndex]) {
@@ -485,7 +518,7 @@
 	module.exports = KeyStroke;
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -497,43 +530,44 @@
 	var backgroundCanvas = document.getElementById("background");
 
 	var Game = (function () {
-			function Game() {
-					_classCallCheck(this, Game);
+	  function Game() {
+	    _classCallCheck(this, Game);
 
-					this.background = new Image();
-					this.background.src = 'https://s3-us-west-1.amazonaws.com/ideabox/cloud-pic.png';
-					this.backgroundPosition = 0;
-					this.ctx = backgroundCanvas.getContext('2d');
-					this.canvas = backgroundCanvas;
-					this.canvas.width = 600;
-					this.canvas.height = 400;
-					this.renderScore();
-			}
+	    this.background = new Image();
+	    this.background.src = 'https://s3-us-west-1.amazonaws.com/ideabox/cloud-pic.png';
+	    this.backgroundPosition = 0;
+	    this.ctx = backgroundCanvas.getContext('2d');
+	    this.canvas = backgroundCanvas;
+	    this.canvas.width = 600;
+	    this.canvas.height = 400;
+	    this.renderScore();
+	  }
 
-			_createClass(Game, [{
-					key: 'start',
-					value: function start() {
-							var _this = this;
-							var velocityX = 0;
-							window.requestAnimationFrame(function cloudLoop() {
-									requestAnimationFrame(cloudLoop);
-									_this.ctx.clearRect(0, 0, _this.canvas.width, _this.canvas.height);
-									_this.ctx.drawImage(_this.background, velocityX, 0);
-									_this.ctx.drawImage(_this.background, _this.background.width - Math.abs(velocityX), 0);
-									if (Math.abs(velocityX) > _this.background.width) {
-											velocityX = 0;
-									}
-									velocityX -= 1;
-							});
-					}
-			}, {
-					key: 'renderScore',
-					value: function renderScore() {
-							$(".high-score-box").text("Highest Score: " + localStorage['high score']);
-					}
-			}]);
+	  _createClass(Game, [{
+	    key: 'start',
+	    value: function start() {
+	      var _this = this;
+	      var velocityX = 0;
+	      window.requestAnimationFrame(function cloudLoop() {
+	        requestAnimationFrame(cloudLoop);
+	        _this.ctx.clearRect(0, 0, _this.canvas.width, _this.canvas.height);
+	        _this.ctx.drawImage(_this.background, velocityX, 0);
+	        _this.ctx.drawImage(_this.background, _this.background.width - Math.abs(velocityX), 0);
+	        if (Math.abs(velocityX) > _this.background.width) {
+	          velocityX = 0;
+	        }
+	        velocityX -= 1;
+	      });
+	    }
+	  }, {
+	    key: 'renderScore',
+	    value: function renderScore() {
+	      localStorage['high score'] = localStorage['high score'] || 0;
+	      $(".high-score-box").text("Your Best Score: " + localStorage['high score']);
+	    }
+	  }]);
 
-			return Game;
+	  return Game;
 	})();
 
 	module.exports = Game;
