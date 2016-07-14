@@ -6,19 +6,11 @@ body {
 	font-family: 'PT Mono';
 	color: #2E3D37;
 	height: 100px;
-	/*display: flex;*/
-	/*min-height: 100vh;*/
-	/*flex-direction: column;*/
 }
 
 .body-div {
 	height: 550px;
 }
-
-
-/*main {
- flex: 1 0 auto;
-}*/
 
 .header {
 	background-color: #98824D;
@@ -108,7 +100,6 @@ canvas {
 }
 
 .fixed {
-	/*position:fixed;*/
 	width: 600px;
 	height: 80px;
 }
@@ -157,21 +148,20 @@ canvas {
 }
 
 a:hover {
-    color: orange;
+    color: orange !important;
 }
 a:visited {
-    color: black;
+    color: #2E3D37;
 }
 a:link {
-    color:black;
+    color: #2E3D37;
 }
 
 a:active{
-    color:black;
+    color: #2E3D37;
 }
 
 .page-footer {
-    /*height: 40px;*/
     display: flex;
     min-height: 20vh;
     flex-direction: column;
@@ -180,4 +170,8 @@ a:active{
 
 .author1 {
     text-align: center;
+}
+
+.icon {
+	color: #27182b;
 }
